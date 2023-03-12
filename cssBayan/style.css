@@ -1,0 +1,90 @@
+/*Переменные*/
+:root {
+    --h2-color: aliceblue;
+}
+
+/*Логика*/
+.mem-block, img{
+    display: none;
+}
+
+.mem-title {
+    display: block;
+    cursor: pointer;
+}
+
+.mem-input {
+    appearance: none;
+    position: absolute;
+}
+
+.mem-input:checked ~ .mem-block, img{
+    display: block;
+    animation: show 0.3s ease-out;
+}
+
+.mem-input:hover ~ .mem-block, img{
+    display: block;
+    animation: show 0.3s ease-out;
+}
+
+.mem-title::after {
+    content: '▼';
+    color: var(--h2-color);
+    margin-left: 0.5rem;
+}
+
+.mem-input:checked ~ .mem-title::after {
+    content: '▲';
+    color: var(--h2-color);
+    margin-left: 0.5rem;
+}
+
+.mem-input:hover ~ .mem-title::after {
+    content: '▲';
+    color: var(--h2-color);
+}
+
+/*Анимация*/
+@keyframes show {
+    from { height: 0px; }
+    to { height: 100px; }
+}
+
+/*Стиль*/
+main {
+    width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFF1DC;
+}
+
+.block {
+    margin-bottom: 1rem;
+}
+
+img {
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.mem-title {
+    display: block;
+    height: 100%;
+    background-color: #2B3467;
+}
+
+h2 {
+    display: inline;
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: var(--h2-color);
+    vertical-align: middle;
+    margin-left: 1rem;
+}
+
