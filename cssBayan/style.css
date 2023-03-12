@@ -1,0 +1,137 @@
+/*Переменные*/
+:root {
+    --h2-color: #2C3333;
+    --h2-color-notactive: #537FE7;
+}
+
+
+
+
+.mem-block, img{
+    display: none;
+    z-index: 2;
+}
+
+.mem-input {
+    appearance: none;
+    position: absolute;
+}
+
+.mem-input:checked ~ .mem-block, img{
+    display: block;
+    animation: show-1 0.3s ease-out;
+}
+
+.mem-title:hover ~ .mem-block, img{
+    display: block;
+    animation: show-1 0.3s ease-out;
+}
+
+.min-height::after {
+    content: '▼';
+    color: var(--h2-color-notactive);
+    position: absolute;
+    margin-top: 0.2rem;
+    margin-left: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.mem-input:checked + .min-height {
+    color: var(--h2-color);
+}
+
+.block:hover .min-height {
+    color: var(--h2-color);
+}
+
+.mem-input:checked + .min-height::after, .min-height{
+    content: '▲';
+    color: var(--h2-color);
+}
+
+.block:hover .min-height::after, .min-height {
+    content: '▲';
+    color: var(--h2-color);
+}
+
+
+@keyframes show-1 {
+    from { height: 0rem; }
+    to { height: 15rem; }
+}
+
+
+main {
+    position: relative;
+    width: 47rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ECF2FF;
+    padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+    border-radius: 0.7rem;
+    margin-top: 1.5rem;
+}
+
+.block {
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    padding: 1rem 0 0 0;
+    background-color: #E3DFFD;
+    border-radius: 0.7rem;
+}
+
+img {
+    height: 15rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    border-radius: 0.7rem;
+}
+
+.mem-block {
+    height: 16rem;
+}
+
+.mem-title {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    top: 0rem;
+    width: 47rem;
+}
+
+.min-height {
+    height: 2.5rem;
+    border-radius: 0.7rem;
+    border-bottom: solid #635985 0.15rem;
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: var(--h2-color-notactive);
+}
+
+h1 {
+    font-family: sans-serif;
+    font-family: sans-serif;
+    font-size: 2rem;
+    color: var(--h2-color);
+    margin-left: 1rem;
+}
+
+span {
+    margin-left: 1rem;
+}
+
+@media (max-width: 820px) {
+    html {
+        font-size: 1.9vw;
+    }
+    
+}
+
+@media (max-width: 320) {
+    
+}
+
