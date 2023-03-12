@@ -31,9 +31,6 @@
     animation: show-1 0.3s ease-out;
 }
 
-
-
-
 .min-height::after {
     content: '▼';
     color: var(--h2-color-notactive);
@@ -42,13 +39,13 @@
     margin-top: 0.2rem;
 }
 
-.mem-input:checked ~ .min-height::after {
+.mem-input:checked + .min-height::after {
     content: '▲';
     color: var(--h2-color);
     margin-left: 0.5rem;
 }
 
-.mem-input:hover ~ .min-height::after {
+.block:hover .min-height::after {
     content: '▲';
     color: var(--h2-color);
 }
